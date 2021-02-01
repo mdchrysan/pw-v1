@@ -1,2 +1,2 @@
 # pw-v1
-First iteration of my personal website.
+Made while re-learning responsive web design:v: nothing much, just take a look on the link:eyes:
