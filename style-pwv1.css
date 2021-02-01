@@ -1,0 +1,237 @@
+:root {
+  --main-blue: #23cee8;
+  --main-dark-blue: rgba(0, 0, 0, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--main-blue);
+  color: white;
+  text-align: center;
+}
+
+h1, h2, .nav-list a {
+  font-family: 'Mansalva', cursive;
+  text-shadow: 4px 8px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--main-blue);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-list a {
+  display: block;
+  font-size: 25px;
+  padding: 15px;
+}
+
+.nav-list a:hover {
+  background: var(--main-dark-blue);
+}
+
+@media (max-width: 500px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 1rem;
+  }
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(115deg, var(--main-dark-blue), rgba(35, 206, 232, 0.8)), url(https://images.unsplash.com/photo-1566439933915-f339f23d687c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.welcome-section > h1 {
+  font-size: 3.5rem;
+}
+
+.welcome-section > p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: white;
+}
+
+#welcome-emoji {
+  margin-top: 10px;
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  50% { transform: rotate(-10deg); }
+}
+
+.projects-section {
+  text-align: center;
+  padding: 5rem 2rem 0 2rem;
+  background: var(--main-blue);
+}
+
+.projects-section-header, .contact-section-header > h2 {
+  font-size: 2rem;
+  max-width: 640px;
+  margin: 0 auto 3rem auto;
+/*   border-bottom: 0.2rem solid white; */
+}
+
+.projects-section-header:hover, .contact-section-header > h2:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 510px) and (max-width: 590px) {
+  .projects-section-header:hover {
+    transform: scale(1.05);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.project {
+  background: var(--main-dark-blue);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.code {
+  color: var(--main-dark-blue);
+  transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+  color: var(--main-blue);
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  padding: 2rem 0.5rem;
+}
+
+@media (max-width: 450px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+}
+
+.contact-section-header > p {
+  max-width: 600px;
+  margin: 0 20px 20px 20px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 85vh;
+  background: var(--main-dark-blue);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  flex-wrap: wrap;
+}
+
+.fab, .far {
+  color: var(--main-blue);
+}
+
+.contact-details {
+  font-size: 3rem;
+  margin-top: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+.page-scroll:hover {
+  transform: translateY(-8px);
+}
+
+.page-scroll {
+  text-align: center;
+  margin-top: 3rem;
+  transition: transform 0.3s ease-out;
+}
+
+.page-scroll .far {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+#to-top i {
+  font-size: 3rem;
+}
+
+footer {
+  background: var(--main-dark-blue);
+  color: rgba(255, 255, 255, 0.1);
+}
